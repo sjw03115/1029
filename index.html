@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>텍스트 스크롤</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+  <style type="text/css">
+
+  body{background: black; text-align: center;}
+
+.intro {  text-align: center; width: "window.innerWidth" }
+
+#say{width:500px; text-align: center; margin:auto; }
+#typewriter { width:500px; text-align: center; position: relative; margin: auto;
+}
+
+h1 { width:500px; text-align: center; font-size: 1em; color: #00FF40; font-family: 'Poor Story', cursive;
+  overflow: hidden;
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+#npc { width: 500px; text-align: center; }
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00FF40; }
+}
+</style> </head>
+
+<body>
+
+
+  <div class="intro"><div id="say">
+  <h1> 이봐! 파티 재밌어? </h1></div></div>
+
+  <div class="intro"><img id="npc" src="boombox.png"></div>
+<p id="demo" onclick="window.open('https://sjw03115.github.io/1022/')"></p>
+      <div class="intro"><div id="typewriter">
+            <h1 onclick="changetext()">>아니</h1>
+            <script type="text/javascript">
+              function changetext(){
+                document.all("say").innerHTML="<h1>역시 재미없지? 음악을 틀어줘야겠어. 당장 빨간카세트테이프를 찾아와!</h1>"
+
+              document.getElementById("demo").innerHTML = 
+            " <h1>>>수락한다.</h1>  "
+          }
+              
+            </script>
+           
+          
+
+    <h1 onclick="changeimage()">>공격한다. </h1> <br>
+
+    <script type="text/javascript">
+  function changeimage() {
+    var image = document.getElementById('npc');
+
+    if (image.src.match("80s")) {
+        image.src = "boombox.png";
+    } else {
+        image.src = "80s.gif";
+    }
+}
+</script>
+
+  </div> </div>
+</body>
+</html>
